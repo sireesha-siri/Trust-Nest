@@ -34,7 +34,10 @@ const configuredOrigins = corsOriginEnv
   : [];
 
 const corsOptions: CorsOptions = {
-  origin: (origin, callback) => {
+  origin: (
+    origin: string | undefined,
+    callback: (err: Error | null, allow?: boolean) => void
+  ) => {
     // 1. Allow non-browser requests with no origin (curl, server-to-server, health check)
     if (!origin) {
       return callback(null, true);
