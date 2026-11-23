@@ -1,0 +1,19 @@
+{
+  "name": "trustnest-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build:client": "npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "preview": "npm --prefix client run preview",
+    "start:server": "npm --prefix server start",
+    "lint": "npm --prefix client run lint",
+    "seed": "npm --prefix server run seed",
+    "test:endpoints": "node server/test-db-endpoints.mjs",
+    "test:qa": "node client/test-qa-suite.mjs",
+    "test:gemini": "node server/test-gemini-suite.mjs"
+  }
+}
